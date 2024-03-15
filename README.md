@@ -18,13 +18,13 @@ git push -u origin main
 ```
 
 ### Tasks 
-- [x] Task 1: Add "Hello World" text in center of screen.
-- [x] Task 2: Add images top of text
-- [ ] Task 2: Add a images top of the screen
-- [ ] Task 3: Add a Login button below the composable and show a toast when clicked
-- [ ] Task 4: Add two edittext for username and password
-- [ ] Task 5: Create a scrollable list containing 100 items, numbered from 1 to 100. When an item is clicked, display the corresponding number.
-- [ ] Task 6:    
+- [x] Task 1: Center the text "Hello World" on the screen.
+- [x] Task 2: Add image at top of text
+- [ ] Task 2: Add image at top of the screen.
+- [ ] Task 3: Below the text, add a Login button that shows a toast when clicked.
+- [ ] Task 4: Add two EditText fields for entering a username and password.
+- [ ] Task 5: Create a scrollable list containing 100 items, numbered from 1 to 100. When an item is clicked, display the corresponding number in Alert.
+- [ ] Task 6: Implement a BMI Calculator. 
 
 ### Github useful links
 

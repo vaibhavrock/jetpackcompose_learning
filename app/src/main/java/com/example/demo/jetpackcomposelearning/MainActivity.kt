@@ -1,5 +1,6 @@
 package com.example.demo.jetpackcomposelearning
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -7,7 +8,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,10 +17,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -50,7 +46,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    var showToast by remember { mutableStateOf(false) }
+    val context = LocalContext.current
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -78,16 +74,15 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 text = "Hello $name!",
                 fontSize = 24.sp,
             )
-            Button(onClick = { showToast = true }) {
+            Button(onClick = { showToast(context, "Button clicked!") }) {
                 Text("Login")
             }
         }
     }
-    if (showToast) {
-        showToast = false
-        val context = LocalContext.current
-        Toast.makeText(context, "Button clicked!", Toast.LENGTH_SHORT).show()
-    }
+}
+
+private fun showToast(context: Context, msg: String) {
+    Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
 }
 
 @Preview(

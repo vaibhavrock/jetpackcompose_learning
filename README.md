@@ -22,7 +22,7 @@ git push -u origin main
 - [x] Task 2: Add image at top of text
 - [x] Task 2: Add image at top of the screen.
 - [x] Task 3: Below the text, add a Login button that shows a toast when clicked.
-- [ ] Task 4: Add two EditText fields for entering a username and password.
+- [x] Task 4: Add two EditText fields for entering a username and password.
 - [ ] Task 5: Create a scrollable list containing 100 items, numbered from 1 to 100. When an item is clicked, display the corresponding number in Alert.
 - [ ] Task 6: Implement a BMI Calculator.
 

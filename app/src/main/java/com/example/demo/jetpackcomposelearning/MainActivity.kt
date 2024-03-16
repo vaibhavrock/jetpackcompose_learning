@@ -43,14 +43,16 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()
     ) {
+        Image(
+            painter = painterResource(
+                id = R.drawable.ic_launcher_foreground
+            ),
+            contentDescription = "My first image",
+            modifier = Modifier.align(Alignment.TopCenter)
+        )
         Column(
         modifier = modifier.padding(8.dp)
         ) {
-            Image(
-                painter = painterResource(
-                    id = R.drawable.ic_launcher_foreground),
-                contentDescription = "My first image",
-            )
             Text(
                 text = "Hello $name!",
                 fontSize = 24.sp,

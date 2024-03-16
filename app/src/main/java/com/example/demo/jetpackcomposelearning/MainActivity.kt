@@ -70,7 +70,7 @@ enum class Screen {
 fun LoginScreenView(modifier: Modifier = Modifier, onLoginClick: () -> Unit) {
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-
+    val context = LocalContext.current
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -112,7 +112,16 @@ fun LoginScreenView(modifier: Modifier = Modifier, onLoginClick: () -> Unit) {
                     .padding(horizontal = 32.dp)
                     .fillMaxWidth()
             )
-            Button(onClick = onLoginClick) {
+            Button(
+                onClick = {
+                    if (username.isEmpty() || password.isEmpty()) {
+                        showToast(context, "Username or password cannot be empty")
+                    } else {
+                        showToast(context, "Welcome $username!")
+                        onLoginClick()
+                    }
+                }
+            ) {
                 Text("Login")
             }
         }
